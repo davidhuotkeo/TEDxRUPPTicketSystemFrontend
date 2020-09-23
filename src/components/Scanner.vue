@@ -60,16 +60,17 @@ export default {
                     this.$router.push({ name: "Home" });
                 }
             } else {
-                let text = "Hooray";
-                let icon = "success";
                 let response = await controller.api.scanData(
                     "/scan",
                     { ticketNumber: content },
                     { headers: { Authentication: jwt } }
                 );
 
+                let text = `${response.data.name} redeemed`;
+                let icon = "success";
+
                 if (response.data.code == "1") {
-                    text = "Redeemed";
+                    text = `${response.data.name} already redeemed`;
                     icon = "error";
                 }
                 Swal.fire({
