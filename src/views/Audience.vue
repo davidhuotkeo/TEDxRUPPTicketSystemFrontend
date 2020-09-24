@@ -1,5 +1,5 @@
 <template>
-    <grid :cols="cols" :rows="rows"></grid>
+    <grid :cols="cols" :rows="rows" :search="true" :sort="true"></grid>
 </template>
 
 <script>
